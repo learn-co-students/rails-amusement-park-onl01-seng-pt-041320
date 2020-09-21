@@ -1,0 +1,6 @@
+class ChangeDataTypeForTickets < ActiveRecord::Migration[5.2]
+  def change
+    change_column :users, :tickets, :integer
+    change_column :attractions, :tickets, :integer
+  end
+end
