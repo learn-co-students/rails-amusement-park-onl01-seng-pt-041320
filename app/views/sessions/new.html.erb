@@ -1,0 +1,13 @@
+<h1>Sign In</h1>
+<br>
+
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+  Name:<br>
+  <%= collection_select :user, :name, User.all, :name, :name %>
+  <br>
+  Password:<br>
+  <input type="password" name="password"><br><br>
+  <br>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type=submit value='Sign In'>
+<% end %>
